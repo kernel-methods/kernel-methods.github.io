@@ -4,7 +4,7 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="generator" content="Hugo 0.68.3" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
   <meta name="description" content="Inspired by this discussion, I wanted the ability to style a markdown table with Bootstrap table classes. In the past, I’ve accomplished this by defining the table in a data file, then building it with a shortcode.
 While this works fine, it’s better for a different use case. I wanted something that meets the following criteria:
@@ -190,7 +190,7 @@ audio {
 </ul>
 <p>After a bit of tinkering, here&rsquo;s the shortcode I came up with. To use it, pass the markdown table between the shortcode, then pass the Bootstrap table classes as an argument.</p>
 <h2 id="usage">Usage</h2>
-<pre><code>{{&lt; bootstrap-table &quot;table table-dark table-striped table-bordered&quot; &gt;}}
+<pre tabindex="0"><code>{{&lt; bootstrap-table &quot;table table-dark table-striped table-bordered&quot; &gt;}}
 | Animal  | Sounds |
 |---------|--------|
 | Cat     | Meow   |
@@ -198,7 +198,7 @@ audio {
 | Cricket | Chirp  |
 {{&lt; /bootstrap-table &gt;}}
 </code></pre><h2 id="definition">Definition</h2>
-<pre><code>{{ $htmlTable := .Inner | markdownify }}
+<pre tabindex="0"><code>{{ $htmlTable := .Inner | markdownify }}
 {{ $class := .Get 0 }}
 {{ $old := &quot;&lt;table&gt;&quot; }}
 {{ $new := printf &quot;&lt;table class=\&quot;%s\&quot;&gt;&quot; $class }}
@@ -232,6 +232,7 @@ audio {
 </tr>
 </tbody>
 </table>
+
 
 
 
